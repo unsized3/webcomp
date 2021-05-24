@@ -1,0 +1,28 @@
+{
+    "name":         "unsized/webcomp",
+    "description":  "Build pagespeed optimised inline html from  css, html, svg component libraries",
+
+    "license":      "MIT",
+    "type":         "library",
+    "authors": [
+            {
+                "name":     "Clive Turner",
+                "email":    "clive@unsized.uk",
+                "homepage": "https://unsized.uk",
+                "role":     "Developer"
+            }
+        ],
+
+    "autoload": {
+        "psr-4": {
+            "unsized\\webcomp\\": "src/"
+        }
+    },
+
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7|^8",
+        "unsized/htmlbuilder": "^0",
+        "unsized/eggcss": "^0"
+    }
+}
