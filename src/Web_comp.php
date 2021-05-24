@@ -7,7 +7,6 @@ require_once('_view_builder.php');
 /** A Dependancy injector for the CSS_builder and HTML_builder classes.
 /** Not loaded in production. We use autogeneraed html and css. A cache of the page.
 /***********************************************************************************/
-
 class Web_comp
 {
 public $component_dir= COMPONENT;
