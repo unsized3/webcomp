@@ -12,17 +12,23 @@ class Web_comp
 public $component_dir= COMPONENT;
 public $svg_symbols=array();
 
-function __construct ($html, $css, $data=[] )
+function __construct ($html, $css, $gf )
 {
 $this->html=$html;
 $this->css=$css;
-$this->data=$data;
+//$this->data=$data;
+$this->gf=$gf;
 }
 
 function build($component, $data=[]  )
 {
 $css=$this->css;
 $html=$this->html;
+$gf=$this->gf;
+//make css theme variables available directly to the template.
+$t=$css->t;
+$z=$css->z;
+extract ($t);
 
 ob_start();
 include_once($this->component_dir.'/'.$component.'.tpl.php');
