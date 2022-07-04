@@ -1,5 +1,18 @@
 <?php
 
+function activate_gf($html)
+{
+$pattern = '|\{(\$gf.*)\}|isU';
+preg_match_all( $pattern, $html, $matches );
+//print_r ($matches);
+foreach ($matches[0] AS $k=> $match){
+  $replace = '<?= '.$matches[1][$k].' ?>';
+  $html = str_replace($match, $replace, $html);
+  }
+return $html;
+}
+
+
 function reverse_string($array=[])
 {
 $string='';
@@ -21,7 +34,7 @@ function cache_output($html_output, $file, $version='0.1', $dir=ROOT.'/Test/View
   }
 
 
-//Performance measurement tools below here 
+//Performance measurement tools below here
 
 function performance_snapshot($webpage)
 {
