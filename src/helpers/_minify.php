@@ -122,7 +122,7 @@ function minify_js($input) {
             // Minify object attribute(s) except JSON attribute(s). From `{'foo':'bar'}` to `{foo:'bar'}`
             '#([\{,])([\'])(\d+|[a-z_][a-z0-9_]*)\2(?=\:)#i',
             // --ibid. From `foo['bar']` to `foo.bar`
-            '#([a-z0-9_\)\]])\[([\'"])([a-z_][a-z0-9_]*)\2\]#i'
+          //  '#([a-z0-9_\)\]])\[([\'"])([a-z_][a-z0-9_]*)\2\]#i'  //causes issue with templates
         ),
         array(
             '$1',
